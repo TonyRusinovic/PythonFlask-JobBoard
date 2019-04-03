@@ -1,4 +1,12 @@
 {% extends "layout.html" %}
+{% from '_macros.html' import show_job, show_jobs with context %}
 {% block content %}
-<h1>Jobs</h1>
+	<div class="columns">
+		<div class="column">
+			<h1>Jobs</h1>
+		</div>
+			<div class="column is-one-fifth">
+		</div>
+	</div>
+	{{ show_jobs(jobs) }}
 {% endblock %}
