@@ -1,6 +1,5 @@
-{% macro show_job(job) %}
-<!-- templates/_macros.html -->
 <!-- show_job -->
+{% macro show_job(job) %}
 <div class="card adjust-height">
   <header class="card-header">
     <p class="card-header-title">
@@ -10,7 +9,7 @@
   <div class="card-content">
     <div class="content">
     	<p>
-    		<a>{{ job['employer_name'] }}</a>
+    		<a href="{{ url_for('employer', employer_id=job['employer_id'])}}">{{ job['employer_name'] }}</a>
     		<br/>
     		${{ job['salary'] }}</a>
     		<br/>
@@ -21,6 +20,7 @@
 </div>
 {% endmacro %}
 
+<!-- show_jobs -->
 {% macro show_jobs(jobs) %}
 <div class="columns is-multiline">
 	{% for job in jobs	%}
